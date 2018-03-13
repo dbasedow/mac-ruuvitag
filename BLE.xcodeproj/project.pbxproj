@@ -8,19 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		DD740AF3205302AE0007A3CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD740AF2205302AE0007A3CA /* AppDelegate.swift */; };
-		DD740AF5205302AE0007A3CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD740AF4205302AE0007A3CA /* ViewController.swift */; };
-		DD740AF7205302AE0007A3CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD740AF6205302AE0007A3CA /* Assets.xcassets */; };
-		DD740AFA205302AE0007A3CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD740AF8205302AE0007A3CA /* Main.storyboard */; };
+		DD8851EB2053EED800C09D4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8851EA2053EED800C09D4D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD740AEF205302AE0007A3CA /* BLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD740AF2205302AE0007A3CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD740AF4205302AE0007A3CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD740AF6205302AE0007A3CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DD740AF9205302AE0007A3CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD740AFB205302AE0007A3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD740AFC205302AE0007A3CA /* BLE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLE.entitlements; sourceTree = "<group>"; };
+		DD8851EA2053EED800C09D4D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +50,9 @@
 			isa = PBXGroup;
 			children = (
 				DD740AF2205302AE0007A3CA /* AppDelegate.swift */,
-				DD740AF4205302AE0007A3CA /* ViewController.swift */,
-				DD740AF6205302AE0007A3CA /* Assets.xcassets */,
-				DD740AF8205302AE0007A3CA /* Main.storyboard */,
 				DD740AFB205302AE0007A3CA /* Info.plist */,
 				DD740AFC205302AE0007A3CA /* BLE.entitlements */,
+				DD8851EA2053EED800C09D4D /* main.swift */,
 			);
 			path = BLE;
 			sourceTree = "<group>";
@@ -96,6 +90,11 @@
 					DD740AEE205302AE0007A3CA = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,8 +121,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD740AF7205302AE0007A3CA /* Assets.xcassets in Resources */,
-				DD740AFA205302AE0007A3CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,23 +131,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD740AF5205302AE0007A3CA /* ViewController.swift in Sources */,
 				DD740AF3205302AE0007A3CA /* AppDelegate.swift in Sources */,
+				DD8851EB2053EED800C09D4D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DD740AF8205302AE0007A3CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD740AF9205302AE0007A3CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DD740AFD205302AE0007A3CA /* Debug */ = {
@@ -264,12 +250,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BLE/BLE.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5U3XK8DF4A;
 				INFOPLIST_FILE = BLE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = danielbasedow.BLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -279,12 +269,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BLE/BLE.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5U3XK8DF4A;
 				INFOPLIST_FILE = BLE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = danielbasedow.BLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
